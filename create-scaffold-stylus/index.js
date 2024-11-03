@@ -16,7 +16,7 @@ const runCommand = (command) => {
 };
 
 const repoName = process.argv[2] || 'scaffold-stylus-app';
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/yourusername/scaffold-stylus ${repoName}`;
+const gitCheckoutCommand = `git clone --depth 1 https://github.com/MihRazvan/Scaffold-Stylus ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
 console.log(chalk.blue(`Creating a new Scaffold-Stylus app in ${repoName}...`));
