@@ -1,8 +1,14 @@
 import React from 'react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useAccount } from 'wagmi';
 import { NavLink } from 'react-router-dom';
 import { Cpu, Layout, GitBranch, FileCode } from 'lucide-react';
+import { useNetwork } from '../hooks/useNetwork';
 
 const Header: React.FC = () => {
+    const { isConnected } = useAccount();
+    const { isArbitrumNetwork, chainName } = useNetwork();
+
     const navLinkClass = ({ isActive }: { isActive: boolean }) =>
         `flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${isActive
             ? 'bg-blue-500/20 text-blue-400'
@@ -40,8 +46,13 @@ const Header: React.FC = () => {
                         </NavLink>
                     </nav>
 
-                    <div className="px-4 py-2 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400">
-                        <span className="text-sm font-medium">Connected to Arbitrum</span>
+                    <div className="flex items-center gap-4">
+                        <ConnectButton />
+                        {isConnected && isArbitrumNetwork && (
+                            <div className="px-4 py-2 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400">
+                                <span className="text-sm font-medium">Connected to {chainName}</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
