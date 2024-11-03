@@ -1,0 +1,13 @@
+{
+  "name": "scaffold-stylus-template",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace @scaffold-stylus/frontend dev",
+    "chain": "yarn workspace @scaffold-stylus/contracts run local",
+    "deploy": "yarn workspace @scaffold-stylus/contracts deploy",
+    "generate": "yarn workspace @scaffold-stylus/contracts generate"
+  }
+}
