@@ -1,6 +1,6 @@
 {
   "name": "create-scaffold-stylus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CLI tool to create Scaffold-Stylus projects",
   "main": "index.js",
   "bin": {
